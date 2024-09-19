@@ -38,7 +38,7 @@ We also provide an ENN model which is trained with the least mean squares (LMS) 
 <!-- ## Installation section -->
 
 ## Pytorch model
-The ENN is an MLP and can be easily implemented in Pytorch. The class ```ENN()``` contains three functions.
+The ENN is an MLP and can be easily implemented in Pytorch. The class ```ENN()``` contains two functions.
 
 <details>
   <summary> __init__() function </summary>
