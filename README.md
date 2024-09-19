@@ -32,9 +32,6 @@ This repository contains a Python implementation of the ENN, which is a multilay
 - [helloenn](https://github.com/marcmartinezgost/enn/blob/main/helloenn.ipynb): A Pytorch tutorial on the ENN and the DCT.
 - You can also [run helloenn in Colab](https://colab.research.google.com/drive/1S70GaGfkSLipH_byNqAPnknESNzp5h_y?usp=drive_link).
 
-We also provide an ENN model which is trained with the least mean squares (LMS) algorithm during backpropagation. This ensures a better learning. You can find implementation in [this notebook](https://github.com/marcmartinezgost/enn/blob/main/ENNwithLMS.ipynb) or
-[run it in Colab](https://colab.research.google.com/drive/1e6Gtt2f3RU0a6bGukLi1XPDV8xw-lxDs?usp=drive_link).
-
 These are the requirements used to run the notebooks:
 ```python
 # python==3.10.12
@@ -44,6 +41,11 @@ scipy==1.13.1
 torch==2.4.1
 torchvision==0.19.1
 ```
+
+We also provide an ENN model which is trained with the least mean squares (LMS) algorithm during backpropagation. This ensures a better learning and only requires the numpy library. You can find implementation in [this notebook](https://github.com/marcmartinezgost/enn/blob/main/ENNwithLMS.ipynb) or
+[run it in Colab](https://colab.research.google.com/drive/1e6Gtt2f3RU0a6bGukLi1XPDV8xw-lxDs?usp=drive_link).
+
+
 
 <!-- ## Installation section -->
 
