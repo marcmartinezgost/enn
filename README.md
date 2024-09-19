@@ -37,14 +37,12 @@ We also provide an ENN model which is trained with the least mean squares (LMS) 
 
 These are the requirements used to run the notebooks:
 ```python
-# python==3.9.7
-matplotlib==3.6.2
-numpy==1.24.4
-scikit_learn==1.1.3
-setuptools==65.5.0
-sympy==1.11.1
-torch==2.2.2
-tqdm==4.66.2
+# python==3.10.12
+numpy==1.26.4
+matplotlib==3.7.1
+scipy==1.13.1
+torch==2.4.1
+torchvision==0.19.1
 ```
 
 <!-- ## Installation section -->
