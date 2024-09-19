@@ -28,29 +28,52 @@
 > The expressiveness of neural networks highly depends on the nature of the activation function, although these are usually assumed predefined and fixed during the training stage. Under a signal processing perspective, in this paper we present Expressive Neural Network (ENN), a novel model in which the non-linear activation functions are modeled using the Discrete Cosine Transform (DCT) and adapted using backpropagation during training. This parametrization keeps the number of trainable parameters low, is appropriate for gradient-based schemes, and adapts to different learning tasks. This is the first non-linear model for activation functions that relies on a signal processing perspective, providing high flexibility and expressiveness to the network. We contribute with insights in the explainability of the network at convergence by recovering the concept of bump, this is, the response of each activation function in the output space. Finally, through exhaustive experiments we show that the model can adapt to classification and regression tasks. The performance of ENN outperforms state of the art benchmarks, providing above a 40% gap in accuracy in some scenarios.
 
 ## Description
-This repository contains a Python implementation of the ENN, which is a multilayer perceptron, whose activation functions are modeled with the DCT and learned during training. We offer the following options:
-- [helloenn](https://github.com/marcmartinezgost/enn/blob/main/helloenn.ipynb): A Pytorch tutorial on the ENN and the DCT.
-- You can also [run helloenn in Colab](https://colab.research.google.com/drive/1S70GaGfkSLipH_byNqAPnknESNzp5h_y?usp=drive_link).
+This repository contains a Python implementation of the ENN. The ENN is a multilayer perceptron (MLP), with trainable activation functions that are modeled with the DCT. We offer two implementations:
 
-These are the requirements used to run the notebooks:
-```python
-# python==3.10.12
-numpy==1.26.4
-matplotlib==3.7.1
-scipy==1.13.1
-torch==2.4.1
-torchvision==0.19.1
-```
+<details>
+  <summary> Pytorch model </summary>
+  
+   - In [helloenn](https://github.com/marcmartinezgost/enn/blob/main/helloenn.ipynb) we introduce a tutorial on the ENN and the DCT.
+   - You can also [run helloenn in Colab](https://colab.research.google.com/drive/1S70GaGfkSLipH_byNqAPnknESNzp5h_y?usp=drive_link).
+  
+  These are the requirements used to run the notebooks:
+  
+  ```python
+    # python==3.10.12
+    numpy==1.26.4
+    matplotlib==3.7.1
+    scipy==1.13.1
+    torch==2.4.1
+    torchvision==0.19.1
+  ```
+</details>
 
-We also provide an ENN model which is trained with the least mean squares (LMS) algorithm during backpropagation. This ensures a better learning and only requires the numpy library. You can find implementation in [this notebook](https://github.com/marcmartinezgost/enn/blob/main/ENNwithLMS.ipynb) or
-[run it in Colab](https://colab.research.google.com/drive/1e6Gtt2f3RU0a6bGukLi1XPDV8xw-lxDs?usp=drive_link).
+<details>
+  <summary> Numpy model </summary>
+  
+  In [ENNwithLMS](https://github.com/marcmartinezgost/enn/blob/main/ENNwithLMS.ipynb) we provide a low level implementation of the ENN, including the 
+  backpropagation algorithm. The ENN is trained with least mean squares (LMS), ensuring a better learning and performance. You can also
+  [run ENNwithLMS in Colab](https://colab.research.google.com/drive/1e6Gtt2f3RU0a6bGukLi1XPDV8xw-lxDs?usp=drive_link).
 
+  These are the requirements used to run the notebooks:
+  
+  ```python
+    # python==3.10.12
+    numpy==1.26.4
+    matplotlib==3.7.1
+    scipy==1.13.1
+  ```
+</details>
 
-
-<!-- ## Installation section -->
 
 ## Pytorch model
 The ENN is an MLP and can be easily implemented in Pytorch. We implement the ENN with a single hidden layer, although the number of layers can be increased arbitrarily. The class ```ENN()``` contains two functions. 
+
+``` python
+    class ENN(nn.Module):
+        def __init__(self, input_dim, hidden_dim, output_dim, n_coeffs=6, nft=512):
+        def forward(self, x):
+```
 
 <details>
   <summary> __init__() function </summary>
