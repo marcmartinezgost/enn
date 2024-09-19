@@ -35,6 +35,18 @@ This repository contains a Python implementation of the ENN, which is a multilay
 We also provide an ENN model which is trained with the least mean squares (LMS) algorithm during backpropagation. This ensures a better learning. You can find implementation in [this notebook](https://github.com/marcmartinezgost/enn/blob/main/ENNwithLMS.ipynb) or
 [run it in Colab](https://colab.research.google.com/drive/1e6Gtt2f3RU0a6bGukLi1XPDV8xw-lxDs?usp=drive_link).
 
+These are the requirements used to run the notebooks:
+```python
+# python==3.9.7
+matplotlib==3.6.2
+numpy==1.24.4
+scikit_learn==1.1.3
+setuptools==65.5.0
+sympy==1.11.1
+torch==2.2.2
+tqdm==4.66.2
+```
+
 <!-- ## Installation section -->
 
 ## Pytorch model
